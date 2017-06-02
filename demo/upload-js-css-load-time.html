@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上传CSS和JS加载时间</title>
+
+    <script>
+        var cssLoadStart = +new Date
+    </script>
+        <!-- 放置CSS外部样式文件 -->
+    <script>
+        var cssLoadTime = (+new Date) - cssLoadStart;
+    </script>
+    <script>
+        var js_upload_error_LoadStart = +new Date;
+    </script>
+        <!-- 放置JS脚本文件 -->
+        <script src="../src/upload-error.js"></script>
+        <!-- 放置JS脚本文件 -->
+    <script>
+        var js_upload_error_LoadTime = (+new Date) - js_upload_error_LoadStart;
+    </script>
+</head>
+<body>
+    <script>
+        var js_upload_performance_LoadStart = +new Date;
+    </script>
+        <!-- 放置JS脚本文件 -->
+        <script src="../src/upload-performance.js"></script>
+        <!-- 放置JS脚本文件 -->
+    <script>
+        var js_upload_performance_LoadTime = (+new Date) - js_upload_performance_LoadStart;
+
+        /* 上传加载时间 */
+        console.log("cssLoadTime: " + cssLoadTime +
+                ", js_upload_error_LoadTime: " + js_upload_error_LoadTime +
+                ", js_upload_performance_LoadTime: " + js_upload_performance_LoadTime);
+    </script>
+</body>
+</html>
